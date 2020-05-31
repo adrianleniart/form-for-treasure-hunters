@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/img/background.jpg");
+  background-size: cover;
+  font-family: font-family: 'Marck Script', cursive;
+}
+
+main {
+  position: relative;
+  width: 700px;
+  margin: 32px;
+  padding: 16px;
+  border-radius: 32px;
+  background-color: #ffffff;
+  background: linear-gradient(135deg, #ffffff, rgb(225, 227, 235));
+  -webkit-animation: main-shadow 1.6s;
+  animation: main-shadow 1.6s;
+  opacity: 0.9;
+}
+
+h1 {
+  font-family: 'Marck Script', cursive;
+}

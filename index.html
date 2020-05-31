@@ -8,86 +8,129 @@
   <title>Formularz rejestracji uczestników</title>
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <main>
     <h1>Formularz dla poszukiwaczy skarbów</h1>
-    <form>
-      <p>
-        <label for="firstName">Imię:</label>
-        <input placeholder="Wpisz tutaj swoje imię" id="firstName" name="firstName">
-      </p>
-
+    <form method="post" action="https://dev.cotenfrontend.pl/">
       <p>
         <label>Imię:</label>
-        <input placeholder="Wpisz tutaj swoje imię" id="firstName" name="firstName">
+        <input placeholder="Wpisz tutaj swoje imię" id="firstName" name="firstName" required>
       </p>
       <p>
         <label>Nazwisko:
-          <input placeholder="Wpisz tutaj swoje nazwisko" id="lastName" name="lastName">
+          <input placeholder="Wpisz tutaj swoje nazwisko" id="lastName" name="lastName" required>
         </label>
       </p>
       <p>
         <label>Email:
-          <input placeholder="Wpisz tutaj swój email" id="email" name="email">
+          <input placeholder="Wpisz tutaj swój email" id="email" name="email" type="email" autocomplete="on" required>
+        </label>
+      </p>
+      <p>
+        <label>Hasło:
+          <input placeholder="Stwórz swoje hasło" id="password" name="password" type="password" required>
         </label>
       </p>
       <p>
         <label>Telefon:
-          <input placeholder="Wpisz tutaj swój telefon" id="
-          phoneNumber" name="phoneNumber">
+          <input placeholder="Wpisz tutaj swój telefon" id="phoneNumber" name="phoneNumber" type="tel" required>
         </label>
       </p>
       <p>
-        <label>Czas gry:
-          <select name="timeGame" id="timeGame"></label>
-        <option value="false" id="selectOption">
-          Podaj swój przedział wiekowy
-        </option>
-        </select>
+        <label>Czas trwania gry?
+          <select name="timeGame" required>
+            <option value="">Podaj ile dni ma trwać gra</option>
+            <option value="7-days">7 dni</option>
+            <option value="fourteen-days">14 dni</option>
+          </select>
+        </label>
       </p>
       <p>
         <label>Twój wiek?
-          <select id="age" name="age"></label>
-        <option value="false" id="selectOption">
-          Podaj swój przedział wiekowy
-        </option>
-        </select>
+          <select name="age" required>
+            <option value="">Podaj swój przedział wiekowy</option>
+            <option value="ageRange1">18-30</option>
+            <option value="ageRange2">30-40</option>
+            <option value="ageRange3">&gt;...40</option>
+          </select>
+        </label>
+      </p>
+      <p>
+        <label>Ilość osób w zespole?
+          <select name="teamPeople" required>
+            <option value="">Preferowana liczba osób w zespole</option>
+            <option value="two-people">Dwie osoby</option>
+            <option value="three-people">Trzy osoby</option>
+            <option value="four-people">Cztery osoby</option>
+          </select>
+        </label>
       </p>
       <fieldset>
         <legend>Adres</legend>
         <p>
           <label>Ulica:
-            <input placeholder="Wpisz tutaj swoja ulicę" id="streetName" name="streetName">
+            <input placeholder="Wpisz tutaj swoja ulicę" id="streetName" name="streetName" required>
           </label>
         </p>
         <p>
           <label>Miasto:
-            <input placeholder="Wpisz tutaj nazwę miasta" id="citytName" name="citytName">
+            <input placeholder="Wpisz tutaj nazwę miasta" id="citytName" name="citytName" required>
           </label>
         </p>
         <p>
           <label>Kod pocztowy:
-            <input placeholder="Wpisz tutaj kod pocztowy" id="postCode" name="postCode">
+            <input placeholder="Wpisz tutaj kod pocztowy" id="postalCode" name="postalCode" pattern="[0-9]{2}-[0-9]{3}"
+              required>
           </label>
         </p>
       </fieldset>
 
       <fieldset>
-        <legend>Kraje</legend>
+        <legend>Wybierz kraj:</legend>
         <p>
-          <label><input name="cityName" type="radio" value="Meksyk">Meksyk</label>
+          <label><input name="cityName" type="radio" value="meksyk" checked>Meksyk</label>
         </p>
         <p>
-          <label><input name="cityName" type="radio" value="Kolumbia">Kolumbia</label>
+          <label><input name="cityName" type="radio" value="kolumbia">Kolumbia</label>
         </p>
         <p>
-          <label><input name="cityName" type="radio" value="Ekwador">Ekwador</label>
+          <label><input name="cityName" type="radio" value="ekwador" disabled>Ekwador</label>
         </p>
       </fieldset>
+
+      <fieldset>
+        <legend>Typ gry:</legend>
+        <p>
+          <label><input name="typeGame" type="radio" value="gra-skarby">Gra szukanie skarbu
+          </label>
+        </p>
+        <p>
+          <label><input name="typeGame" type="radio" value="gra-sensacyjna">Gra sensacyjna</label>
+        </p>
+      </fieldset>
+
       <p>
         <label><input name="agreement" checked type="checkbox" value="agree"> Zgoda na przesłanie oferty</label>
+      </p>
+      <p>
+        <label><input name="agreement" checked type="checkbox" value="agree"> Zgoda na kontakt telefoniczny</label>
+      </p>
+      <p>
+        <label>Skala ryzyka:
+          <input id="range" name="range" type="range" min="0" max="100" step="33">
+        </label>
+      </p>
+      <p>
+        <label>
+          <textarea name="yourSuggestion" id="yourSuggestion" cols="30"
+            rows="10">Jeśli masz jakieś ciekawe pomysły na temat gry, pisz śmiało :)</textarea>
+        </label>
+      </p>
+      <p>
+        <input type="submit" value="Wyślij formularz" autofocus>
       </p>
     </form>
 
