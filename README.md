@@ -1,1 +1,1 @@
-# form-for-treasure-hunters
+# treasure hunters application form
