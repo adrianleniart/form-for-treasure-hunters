@@ -9,132 +9,165 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 </head>
 
 <body>
-  <main>
-    <h1>Formularz dla poszukiwaczy skarbów</h1>
-    <form method="post" action="https://dev.cotenfrontend.pl/">
-      <p>
-        <label>Imię:</label>
-        <input placeholder="Wpisz tutaj swoje imię" id="firstName" name="firstName" required>
+  <main class="main">
+    <header class="header">
+      <h1 class="header__heading">Formularz dla poszukiwaczy wrażeń.</h1>
+      <p class="header__paragraph">Gra dla osób, które chcą przeżyć przygodę życia, będzie bardzo realistycznie,
+        dynamicznie
+        i
+        ekstremalnie. Chcesz zdobyć nowe doświadczenia i spojrzeć na otaczającą Cię rzeczywistość z innej perspektywy,
+        a przy okazji poznać wspaniałych ludzi i nawiązać piękne przyjaźnie na całe życie. Być
+        może to właśnie ten moment!
+        Uwaga!
+
+        Bardzo dobrze się zastanów, zanim wypełnisz ten formularz, dający Ci możliwość uczestniczenia w tej realnej,
+        wyjątkowej i ekscytującej grze, poźniej nic już nie będzie takie samo!
       </p>
-      <p>
-        <label>Nazwisko:
-          <input placeholder="Wpisz tutaj swoje nazwisko" id="lastName" name="lastName" required>
-        </label>
-      </p>
-      <p>
-        <label>Email:
-          <input placeholder="Wpisz tutaj swój email" id="email" name="email" type="email" autocomplete="on" required>
-        </label>
-      </p>
-      <p>
-        <label>Hasło:
-          <input placeholder="Stwórz swoje hasło" id="password" name="password" type="password" required>
-        </label>
-      </p>
-      <p>
-        <label>Telefon:
-          <input placeholder="Wpisz tutaj swój telefon" id="phoneNumber" name="phoneNumber" type="tel" required>
-        </label>
-      </p>
-      <p>
-        <label>Czas trwania gry?
-          <select name="timeGame" required>
-            <option value="">Podaj ile dni ma trwać gra</option>
-            <option value="7-days">7 dni</option>
-            <option value="fourteen-days">14 dni</option>
-          </select>
-        </label>
-      </p>
-      <p>
-        <label>Twój wiek?
-          <select name="age" required>
-            <option value="">Podaj swój przedział wiekowy</option>
-            <option value="ageRange1">18-30</option>
-            <option value="ageRange2">30-40</option>
-            <option value="ageRange3">&gt;...40</option>
-          </select>
-        </label>
-      </p>
-      <p>
-        <label>Ilość osób w zespole?
-          <select name="teamPeople" required>
-            <option value="">Preferowana liczba osób w zespole</option>
-            <option value="two-people">Dwie osoby</option>
-            <option value="three-people">Trzy osoby</option>
-            <option value="four-people">Cztery osoby</option>
-          </select>
-        </label>
-      </p>
-      <fieldset>
-        <legend>Adres</legend>
-        <p>
-          <label>Ulica:
-            <input placeholder="Wpisz tutaj swoja ulicę" id="streetName" name="streetName" required>
+    </header>
+
+    <form class="form" method="post" action="https://dev.cotenfrontend.pl/">
+      <legend class="form__title">Dane personalne</legend>
+      <div class="form__wrapper">
+        <p class="">
+          <label class="form__label">Imię:
+            <input class="form__input" placeholder="Wpisz tutaj swoje imię" name="firstName" required autofocus>
           </label>
         </p>
         <p>
-          <label>Miasto:
-            <input placeholder="Wpisz tutaj nazwę miasta" id="citytName" name="citytName" required>
+          <label class="form__label">Nazwisko:
+            <input class="form__input" placeholder="Wpisz tutaj swoje nazwisko" name="lastName" required>
           </label>
         </p>
         <p>
-          <label>Kod pocztowy:
-            <input placeholder="Wpisz tutaj kod pocztowy" id="postalCode" name="postalCode" pattern="[0-9]{2}-[0-9]{3}"
+          <label class="form__label">Email:
+            <input class="form__input" placeholder="Wpisz tutaj swój email" name="email" type="email" autocomplete="on"
               required>
           </label>
         </p>
-      </fieldset>
-
-      <fieldset>
-        <legend>Wybierz kraj:</legend>
         <p>
-          <label><input name="cityName" type="radio" value="meksyk" checked>Meksyk</label>
-        </p>
-        <p>
-          <label><input name="cityName" type="radio" value="kolumbia">Kolumbia</label>
-        </p>
-        <p>
-          <label><input name="cityName" type="radio" value="ekwador" disabled>Ekwador</label>
-        </p>
-      </fieldset>
-
-      <fieldset>
-        <legend>Typ gry:</legend>
-        <p>
-          <label><input name="typeGame" type="radio" value="gra-skarby">Gra szukanie skarbu
+          <label class="form__label">Hasło:
+            <input class="form__input" placeholder="Stwórz swoje hasło" name="password" type="password" required>
           </label>
         </p>
         <p>
-          <label><input name="typeGame" type="radio" value="gra-sensacyjna">Gra sensacyjna</label>
+          <label class="form__label">Telefon:
+            <input class="form__input" placeholder="Wpisz tutaj swój telefon" name="phoneNumber" type="tel" required>
+          </label>
+        </p>
+        <p>
+          <label class="form__label">Twój wiek?
+            <select class="form__range" name="age" required>
+              <option class="form__option" value="">Podaj swój przedział wiekowy</option>
+              <option class="form__option" value="ageRange1">18-30</option>
+              <option class="form__option" value="ageRange2">30-40</option>
+              <option class="form__option" value="ageRange3">&gt;...40</option>
+            </select>
+          </label>
+        </p>
+      </div>
+
+      <fieldset class="form__fieldset">
+        <p>
+          <label class="form__label">Czas trwania gry?
+            <select class="form__select" name="timeGame" required>
+              <option value="">Podaj ile dni ma trwać gra</option>
+              <option value="7-days">7 dni</option>
+              <option value="fourteen-days">14 dni</option>
+            </select>
+          </label>
+        </p>
+        <p>
+          <label class="form__label">Ilość osób w zespole?
+            <select class="form__select" name="teamPeople" required>
+              <option value="">Preferowana liczba osób w zespole</option>
+              <option value="two-people">Dwie osoby</option>
+              <option value="three-people">Trzy osoby</option>
+              <option value="four-people">Cztery osoby</option>
+            </select>
+          </label>
+        </p>
+      </fieldset>
+      <fieldset class="form__fieldset">
+        <legend>Adres</legend>
+        <p>
+          <label class="form__label">Ulica:
+            <input class="form__input" placeholder="Wpisz tutaj swoja ulicę" name="streetName" required>
+          </label>
+        </p>
+        <p>
+          <label class="form__label">Miasto:
+            <input class="form__input" placeholder="Wpisz tutaj nazwę miasta" name="citytName" required>
+          </label>
+        </p>
+        <p>
+          <label class="form__label">Kod pocztowy:
+            <input class="form__input" placeholder="Wpisz tutaj kod pocztowy" name="postalCode"
+              pattern="[0-9]{2}-[0-9]{3}" required>
+          </label>
+        </p>
+      </fieldset>
+
+      <fieldset class="form__fieldset">
+        <legend>Wybierz kraj:</legend>
+        <p>
+          <label class="form__label"><input name="cityName" type="radio" value="meksyk" checked>Meksyk</label>
+        </p>
+        <p>
+          <label class="form__label"><input name="cityName" type="radio" value="kolumbia">Kolumbia</label>
+        </p>
+        <p>
+          <label class="form__label"><input name="cityName" type="radio" value="ekwador">Ekwador</label>
+        </p>
+      </fieldset>
+
+      <fieldset class="form__fieldset">
+        <legend>Typ gry:</legend>
+        <p>
+          <label><input name="typeGame" type="radio" value="gra-skarby">Gra
+            szukanie skarbu
+          </label>
+        </p>
+        <p>
+          <label><input name="typeGame" type="radio" value="gra-sensacyjna">Gra
+            sensacyjna</label>
         </p>
       </fieldset>
 
       <p>
-        <label><input name="agreement" checked type="checkbox" value="agree"> Zgoda na przesłanie oferty</label>
+        <label><input name="agreement" checked type="checkbox" value="agree-offer"> Zgoda na
+          przesłanie oferty</label>
       </p>
       <p>
-        <label><input name="agreement" checked type="checkbox" value="agree"> Zgoda na kontakt telefoniczny</label>
+        <label><input name="agreement" checked type="checkbox" value="agree-contact-phone"> Zgoda na
+          kontakt
+          telefoniczny</label>
       </p>
       <p>
-        <label>Skala ryzyka:
-          <input id="range" name="range" type="range" min="0" max="100" step="33">
+        <label class="form__label">Skala ryzyka:
+          <input name="rangeRisk" type="range" min="0" max="100" step="33">
         </label>
       </p>
       <p>
-        <label>
-          <textarea name="yourSuggestion" id="yourSuggestion" cols="30"
+        <label class="form__label">
+          <textarea class="textarea__content" name="yourSuggestion" id="yourSuggestion" cols="30"
             rows="10">Jeśli masz jakieś ciekawe pomysły na temat gry, pisz śmiało :)</textarea>
         </label>
       </p>
       <p>
-        <input type="submit" value="Wyślij formularz" autofocus>
+        <input class="submit" type="submit" value="Wyślij formularz">
       </p>
+      <footer class="footer">
+        <a class="footer__goTop" href="#"><i class="fas fa-angle-double-up"></i></a>
+        <p class="footer__description"> Projekt Skarby 😎 💰 🐱‍👤 🗺 💘</p>
+      </footer>
     </form>
 
   </main>
+
 </body>
 
 </html>
