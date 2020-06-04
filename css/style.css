@@ -147,12 +147,3 @@ main {
 .form__fieldset {
   margin-bottom: 20px;
 }
-
-@media all and (max-width:30em) {
-  .submit {
-    display: block;
-    margin: 0.4em auto;
-  }
-}
-
-*/
