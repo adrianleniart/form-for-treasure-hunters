@@ -47,13 +47,6 @@ main {
   line-height: 1.5;
 }
 
-.form__wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 40px;
-  row-gap: 10px;
-}
-
 .form__label {
   padding: 10px 0px 0px 6px;
   font-weight: bold;
@@ -148,4 +141,19 @@ main {
 
 .form__fieldset {
   margin-bottom: 20px;
+}
+
+@media screen and (min-width:768px) {
+  .form__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    row-gap: 10px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  body {
+    background: rgb(226, 226, 226);
+  }
 }
